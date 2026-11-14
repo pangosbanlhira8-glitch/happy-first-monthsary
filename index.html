@@ -4,81 +4,255 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy First Monthsary Babii! ♡</title>
+
 <style>
 *{box-sizing:border-box}
+
 body{
- margin:0;font-family:Georgia,serif;
- background:linear-gradient(135deg,#fff1f5,#fce4ec,#fff8f0);
- color:#704653;text-align:center;min-height:100vh;
+ margin:0;
+ font-family:Georgia,serif;
+ color:#805365;
+ text-align:center;
+ background:linear-gradient(135deg,#fff0f5,#fce0e9,#fff8f2);
+ min-height:100vh;
+ overflow-x:hidden;
 }
-.page{display:none;min-height:100vh;padding:35px 18px 50px}
-.page.active{display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+.page{
+ display:none;
+ min-height:100vh;
+ padding:30px 17px;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
+}
+
+.page.active{
+ display:flex;
+ animation:pageIn .8s ease both;
+}
+
+@keyframes pageIn{
+ from{opacity:0;transform:translateY(25px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
 .card{
- background:#ffffffd9;border:1px solid #f5cad6;border-radius:24px;
- padding:28px 22px;max-width:650px;width:100%;
- box-shadow:0 10px 35px #b86b8220;
+ width:100%;
+ max-width:650px;
+ padding:28px 22px;
+ border:1px solid #f4c8d6;
+ border-radius:28px;
+ background:#ffffffdf;
+ box-shadow:0 12px 35px #b86b8225;
 }
-h1{font-size:clamp(2rem,8vw,3rem);color:#b45c78;margin:10px 0}
-h2{color:#b45c78}
+
+h1{
+ color:#b65d7b;
+ font-size:clamp(2rem,8vw,3rem);
+}
+
+h2{color:#b65d7b}
+
 p{line-height:1.8}
-.small{font-size:.9rem;color:#a87987}
+
 button{
- border:0;border-radius:30px;padding:13px 23px;margin:8px;
- background:#c87591;color:white;font-size:1rem;cursor:pointer;
+ border:0;
+ border-radius:30px;
+ padding:14px 22px;
+ margin:8px;
+ background:#c87591;
+ color:white;
+ font-size:1rem;
+ cursor:pointer;
+ transition:.3s;
+ box-shadow:0 5px 12px #c8759130;
 }
-button.secondary{background:#f4d5df;color:#874d61}
+
+button:hover{
+ transform:translateY(-4px) scale(1.04);
+ box-shadow:0 8px 18px #c8759150;
+}
+
+button:active{transform:scale(.92)}
+
+.secondary{
+ background:#f5d6e0;
+ color:#874d61;
+}
+
 input{
- padding:13px;border:1px solid #e8b9c8;border-radius:25px;
- width:85%;max-width:260px;text-align:center;font-size:1rem;
+ padding:13px;
+ border:1px solid #e8b9c8;
+ border-radius:25px;
+ width:85%;
+ max-width:260px;
+ text-align:center;
+ font-size:1rem;
 }
-.heart{font-size:2rem;color:#c87591}
-.flower{font-size:3rem;background:#fff5f8;color:#b45c78;
- border:1px solid #f3d2dc;border-radius:18px;padding:15px;
- width:100%;cursor:pointer}
-.petals{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+
+.heart{
+ font-size:2.5rem;
+ animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+ 0%,100%{transform:scale(1)}
+ 50%{transform:scale(1.2)}
+}
+
+.letter{
+ text-align:left;
+ white-space:pre-line;
+ line-height:1.9;
+}
+
+.petals{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+}
+
+.flower{
+ background:#fff4f8;
+ color:#a95270;
+ border:1px solid #f3c9d8;
+ border-radius:20px;
+ padding:17px 8px;
+ font-size:1.05rem;
+}
+
+.flower span{
+ display:block;
+ font-size:2.8rem;
+ margin-bottom:7px;
+}
+
+.flower:active span{
+ animation:bloom .6s ease;
+}
+
+@keyframes bloom{
+ 0%{transform:scale(.6)}
+ 60%{transform:scale(1.35) rotate(15deg)}
+ 100%{transform:scale(1)}
+}
+
 .message{
- display:none;background:#fff7fa;border-radius:18px;padding:18px;
- margin-top:18px;line-height:1.8;border:1px solid #f3d2dc;
+ display:none;
+ background:#fff5f9;
+ border:1px solid #f2cbd8;
+ border-radius:20px;
+ padding:20px;
+ margin-top:18px;
+ line-height:1.9;
 }
-.message.show{display:block}
-.letter{text-align:left;white-space:pre-line;line-height:1.9}
-iframe{width:100%;height:152px;border:0;border-radius:14px}
-.footer{margin-top:25px;font-size:.85rem;color:#b18b97}
+
+.message.show{
+ display:block;
+ animation:messageIn .7s ease both;
+}
+
+@keyframes messageIn{
+ from{opacity:0;transform:scale(.8)}
+ to{opacity:1;transform:scale(1)}
+}
+
+iframe{
+ width:100%;
+ height:152px;
+ border:0;
+ border-radius:15px;
+}
+
+.footer{
+ color:#b18b97;
+ font-size:.85rem;
+ margin-top:25px;
+}
+
+/* Floating hearts */
+.floating{
+ position:fixed;
+ bottom:-40px;
+ pointer-events:none;
+ z-index:5;
+ animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+ 0%{transform:translateY(0) rotate(0);opacity:0}
+ 15%{opacity:.8}
+ 100%{transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+
+/* Sparkles */
+.sparkle{
+ position:fixed;
+ pointer-events:none;
+ animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+ from{opacity:.2;transform:scale(.7)}
+ to{opacity:1;transform:scale(1.3)}
+}
+
+/* Envelope */
+.envelope{
+ font-size:5rem;
+ display:inline-block;
+ animation:envelope 2s infinite ease-in-out;
+}
+
+@keyframes envelope{
+ 0%,100%{transform:translateY(0) rotate(-3deg)}
+ 50%{transform:translateY(-12px) rotate(3deg)}
+}
 </style>
 </head>
+
 <body>
 
+<!-- PASSWORD -->
 <section id="lock" class="page active">
  <div class="card">
+  <div class="envelope">💌</div>
   <div class="heart">♡ ♡ ♡</div>
-  <p class="small">A little surprise made with love</p>
+  <p>A little surprise made with love</p>
   <h1>Happy First Monthsary Babii!</h1>
-  <p>Someone made something special just for you. ♡</p>
-  <p>Enter our special password to open it.</p>
+  <p>Someone made something special just for you.</p>
+  <p>Enter our special password. ♡</p>
   <input id="password" type="password" placeholder="Enter password">
-  <br><button onclick="unlock()">Open my surprise ♡</button>
-  <p id="error" class="small"></p>
+  <br>
+  <button onclick="unlock()">Open my surprise ♡</button>
+  <p id="error"></p>
  </div>
 </section>
 
+<!-- HOME -->
 <section id="home" class="page">
  <div class="card">
   <div class="heart">♡ 🌷 ♡</div>
-  <p class="small">To my favorite person</p>
+  <p>A little something for my favorite person</p>
   <h1>Happy First Monthsary Babii!</h1>
   <p>I made this little website to remind you how loved and appreciated you are.</p>
   <p>Every little part of this is for you, babi. ♡</p>
-  <button onclick="showPage('letter')">Open my letter 💌</button>
-  <button onclick="showPage('flowers')">A flower for you 🌷</button>
-  <button onclick="showPage('song')">Our little song 🎵</button>
+
+  <button onclick="showPage('letter')">💌 Open my letter</button>
+  <button onclick="showPage('flowers')">🌷 A flower for you</button>
+  <button onclick="showPage('song')">🎵 Our little song</button>
+
   <p class="footer">Made with love, just for you ♡</p>
  </div>
 </section>
 
+<!-- LETTER -->
 <section id="letter" class="page">
  <div class="card">
-  <div class="heart">💌</div>
+  <div class="envelope">💌</div>
   <h1>My Letter for You</h1>
+
   <div class="letter">To my babi,
 
 Hi, baby! I just want to take a moment to remind you how much you mean to me and how thankful I am to have someone like you in my life. I know sometimes I can be makulit, stubborn, and even a little bossy, but I hope you know that behind all of that is someone who genuinely loves you and wants nothing but the best for you.
@@ -96,40 +270,53 @@ And lastly, babi, thank you for being you. Thank you for your patience, your eff
 I love you so much, babi. I’m proud of you, I’m rooting for you, and I’ll always be happy to see you achieve the things you’ve been working hard for. No matter how busy life gets or how far your dreams take you, I hope we never forget why we started and why we’re still choosing each other.
 
 Always remember that I love you, babi. Take care of yourself always, okay? 🤍</div>
-  <button onclick="showPage('home')" class="secondary">← Back</button>
+
+  <button class="secondary" onclick="showPage('home')">← Back</button>
  </div>
 </section>
 
+<!-- FLOWERS -->
 <section id="flowers" class="page">
  <div class="card">
   <div class="heart">🌷</div>
   <h1>Reasons Why I Treasure You</h1>
   <p>Tap each flower to discover a little message for you, babi. ♡</p>
+
   <div class="petals">
-   <button class="flower" onclick="reveal(0)">🌷<br><small>Your Efforts</small></button>
-   <button class="flower" onclick="reveal(1)">🌸<br><small>The Way You Treat Me</small></button>
-   <button class="flower" onclick="reveal(2)">🌼<br><small>Your Care</small></button>
-   <button class="flower" onclick="reveal(3)">🌺<br><small>Your Thoughtfulness</small></button>
-   <button class="flower" onclick="reveal(4)">🌻<br><small>Your Patience</small></button>
-   <button class="flower" onclick="reveal(5)">💐<br><small>Your Love</small></button>
-   <button class="flower" onclick="reveal(6)" style="grid-column:1/-1">🌹<br><small>My Favorite Person</small></button>
+   <button class="flower" onclick="reveal(0)"><span>🌷</span>Your Efforts</button>
+   <button class="flower" onclick="reveal(1)"><span>🌸</span>The Way You Treat Me</button>
+   <button class="flower" onclick="reveal(2)"><span>🌼</span>Your Care</button>
+   <button class="flower" onclick="reveal(3)"><span>🌺</span>Your Thoughtfulness</button>
+   <button class="flower" onclick="reveal(4)"><span>🌻</span>Your Patience</button>
+   <button class="flower" onclick="reveal(5)"><span>💐</span>Your Love</button>
+   <button class="flower" style="grid-column:1/-1" onclick="reveal(6)"><span>🌹</span>My Favorite Person</button>
   </div>
+
   <div id="flowerMessage" class="message"></div>
+
   <div id="flowerEnding" class="message">
    Every petal has a reason, but even these seven reasons aren't enough to explain how much I treasure you. Thank you for being you, my babi. Happy First Monthsary! ♡
   </div>
-  <button onclick="showPage('home')" class="secondary">← Back</button>
+
+  <button class="secondary" onclick="showPage('home')">← Back</button>
  </div>
 </section>
 
+<!-- SONG -->
 <section id="song" class="page">
  <div class="card">
   <div class="heart">🎵 ♡</div>
   <h1>A Song for You</h1>
   <p>Because some feelings are easier to express through music. I hope this song reminds you of us. ♡</p>
-  <iframe src="https://open.spotify.com/embed/track/6a3qOj7lEfVuSFiKUM9pRG?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  <p class="small">Tap play to listen. Spotify may ask you to open its app.</p>
-  <button onclick="showPage('home')" class="secondary">← Back</button>
+
+  <iframe
+   src="https://open.spotify.com/embed/track/6a3qOj7lEfVuSFiKUM9pRG?utm_source=generator"
+   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+   loading="lazy">
+  </iframe>
+
+  <p class="footer">A little song for my babi ♡</p>
+  <button class="secondary" onclick="showPage('home')">← Back</button>
  </div>
 </section>
 
@@ -137,15 +324,19 @@ Always remember that I love you, babi. Take care of yourself always, okay? 🤍<
 function unlock(){
  if(document.getElementById('password').value==='0401'){
   showPage('home');
+  hearts();
  }else{
   document.getElementById('error').textContent='Wrong password. Try again, babi. ♡';
  }
 }
+
 function showPage(id){
  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
  document.getElementById(id).classList.add('active');
- window.scrollTo(0,0);
+ window.scrollTo({top:0,behavior:'smooth'});
+ hearts();
 }
+
 const messages=[
  ["Your Efforts","I treasure every little effort na ginagawa mo just to make me happy. Kahit simple things lang, they mean so much to me. I hope you know na I notice and appreciate everything you do."],
  ["The Way You Treat Me","Thank you for always treating me with so much love, patience, and respect. You make me feel appreciated and special, even through the smallest things."],
@@ -155,13 +346,40 @@ const messages=[
  ["Your Love","I treasure how you show your love through your actions, not just through words. Every effort, every reminder, and every little thing you do makes me feel how much you care."],
  ["My Favorite Person","I hope you never forget how much I appreciate having you in my life. I'm so proud of you, and I'm always thankful na ikaw yung person na I get to share my love with. I love you, babi! ♡"]
 ];
+
 let opened=[];
+
 function reveal(i){
- document.getElementById('flowerMessage').classList.add('show');
- document.getElementById('flowerMessage').innerHTML='<h2>'+messages[i][0]+'</h2><p>'+messages[i][1]+'</p>';
+ const box=document.getElementById('flowerMessage');
+ box.classList.remove('show');
+
+ setTimeout(()=>{
+  box.innerHTML='<h2>'+messages[i][0]+'</h2><p>'+messages[i][1]+'</p>';
+  box.classList.add('show');
+ },100);
+
  if(!opened.includes(i))opened.push(i);
- if(opened.length===7)document.getElementById('flowerEnding').classList.add('show');
+
+ if(opened.length===7){
+  document.getElementById('flowerEnding').classList.add('show');
+ }
+ hearts();
+}
+
+function hearts(){
+ const symbols=['♡','♥','💕','✨','🌸'];
+ for(let i=0;i<7;i++){
+  const el=document.createElement('div');
+  el.className='floating';
+  el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+'vw';
+  el.style.fontSize=(15+Math.random()*22)+'px';
+  el.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),8500);
+ }
 }
 </script>
+
 </body>
 </html>
