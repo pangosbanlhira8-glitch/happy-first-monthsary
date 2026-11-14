@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy First Monthsary Babii! ♡</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:Georgia,serif;
+ background:linear-gradient(135deg,#fff1f5,#fce4ec,#fff8f0);
+ color:#704653;text-align:center;min-height:100vh;
+}
+.page{display:none;min-height:100vh;padding:35px 18px 50px}
+.page.active{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.card{
+ background:#ffffffd9;border:1px solid #f5cad6;border-radius:24px;
+ padding:28px 22px;max-width:650px;width:100%;
+ box-shadow:0 10px 35px #b86b8220;
+}
+h1{font-size:clamp(2rem,8vw,3rem);color:#b45c78;margin:10px 0}
+h2{color:#b45c78}
+p{line-height:1.8}
+.small{font-size:.9rem;color:#a87987}
+button{
+ border:0;border-radius:30px;padding:13px 23px;margin:8px;
+ background:#c87591;color:white;font-size:1rem;cursor:pointer;
+}
+button.secondary{background:#f4d5df;color:#874d61}
+input{
+ padding:13px;border:1px solid #e8b9c8;border-radius:25px;
+ width:85%;max-width:260px;text-align:center;font-size:1rem;
+}
+.heart{font-size:2rem;color:#c87591}
+.flower{font-size:3rem;background:#fff5f8;color:#b45c78;
+ border:1px solid #f3d2dc;border-radius:18px;padding:15px;
+ width:100%;cursor:pointer}
+.petals{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.message{
+ display:none;background:#fff7fa;border-radius:18px;padding:18px;
+ margin-top:18px;line-height:1.8;border:1px solid #f3d2dc;
+}
+.message.show{display:block}
+.letter{text-align:left;white-space:pre-line;line-height:1.9}
+iframe{width:100%;height:152px;border:0;border-radius:14px}
+.footer{margin-top:25px;font-size:.85rem;color:#b18b97}
+</style>
+</head>
+<body>
+
+<section id="lock" class="page active">
+ <div class="card">
+  <div class="heart">♡ ♡ ♡</div>
+  <p class="small">A little surprise made with love</p>
+  <h1>Happy First Monthsary Babii!</h1>
+  <p>Someone made something special just for you. ♡</p>
+  <p>Enter our special password to open it.</p>
+  <input id="password" type="password" placeholder="Enter password">
+  <br><button onclick="unlock()">Open my surprise ♡</button>
+  <p id="error" class="small"></p>
+ </div>
+</section>
+
+<section id="home" class="page">
+ <div class="card">
+  <div class="heart">♡ 🌷 ♡</div>
+  <p class="small">To my favorite person</p>
+  <h1>Happy First Monthsary Babii!</h1>
+  <p>I made this little website to remind you how loved and appreciated you are.</p>
+  <p>Every little part of this is for you, babi. ♡</p>
+  <button onclick="showPage('letter')">Open my letter 💌</button>
+  <button onclick="showPage('flowers')">A flower for you 🌷</button>
+  <button onclick="showPage('song')">Our little song 🎵</button>
+  <p class="footer">Made with love, just for you ♡</p>
+ </div>
+</section>
+
+<section id="letter" class="page">
+ <div class="card">
+  <div class="heart">💌</div>
+  <h1>My Letter for You</h1>
+  <div class="letter">To my babi,
+
+Hi, baby! I just want to take a moment to remind you how much you mean to me and how thankful I am to have someone like you in my life. I know sometimes I can be makulit, stubborn, and even a little bossy, but I hope you know that behind all of that is someone who genuinely loves you and wants nothing but the best for you.
+
+One of the things I love most about you is your soft heart. You’re so understanding, loving, and patient with me. Kahit minsan naiinis ka sa akin, you still find a way to forgive me and make things okay again. I appreciate that more than you know. Thank you for always listening to all my random stories, even those nonsense things na bigla ko na lang naiisip and yap about. HWHAHA. I love how I can talk to you about almost anything without feeling like I’m being annoying. You make me feel heard, appreciated, and loved even through the simplest things.
+
+And baby, please know that I really appreciate how you consider my feelings whenever you make decisions. Alam kong minsan strict ako and may mga bagay akong pinagbabawal sa’yo, but I hope you understand that it’s never because I want to control your life. I just care about you, your safety, and your future. I don’t want you getting into situations that could hurt you or affect the things you’re working hard for. I know you have your own decisions to make, and I respect that. I just hope we can always understand each other and consider one another’s feelings. Thank you for being so considerate of me.
+
+I’m also really proud of you for choosing Maritime and for taking another step toward your dreams. I know next school year will be different because you’ll be away for almost a year, and honestly, the thought of being in an LDR makes me a little emotional. I’ll miss your presence, our conversations, and all the little things that we usually get to share. There will probably be days when I wish I could just see you instead of waiting for your replies or calls. But I don’t want you to feel like you have to choose between loving me and pursuing your dreams. I want you to grow, learn, and become the person you’ve always wanted to be. I want to be someone who supports you while you’re building your future.
+
+Please don’t ever think that distance will make me less proud of you or less appreciative of everything you do. I hope we continue choosing each other even on the days when communication gets difficult or when our schedules don’t match. Let’s always make time for each other, communicate properly, and never let misunderstandings become bigger than our love and respect for one another.
+
+And lastly, babi, thank you for being you. Thank you for your patience, your efforts, your love, and even for tolerating my endless yapping. I may not always express it perfectly, but I notice the little things you do, and they mean so much to me. I hope you never get tired of being soft-hearted and loving, but please remember to take care of yourself, too. You deserve the same love, patience, and understanding that you always give to others.
+
+I love you so much, babi. I’m proud of you, I’m rooting for you, and I’ll always be happy to see you achieve the things you’ve been working hard for. No matter how busy life gets or how far your dreams take you, I hope we never forget why we started and why we’re still choosing each other.
+
+Always remember that I love you, babi. Take care of yourself always, okay? 🤍</div>
+  <button onclick="showPage('home')" class="secondary">← Back</button>
+ </div>
+</section>
+
+<section id="flowers" class="page">
+ <div class="card">
+  <div class="heart">🌷</div>
+  <h1>Reasons Why I Treasure You</h1>
+  <p>Tap each flower to discover a little message for you, babi. ♡</p>
+  <div class="petals">
+   <button class="flower" onclick="reveal(0)">🌷<br><small>Your Efforts</small></button>
+   <button class="flower" onclick="reveal(1)">🌸<br><small>The Way You Treat Me</small></button>
+   <button class="flower" onclick="reveal(2)">🌼<br><small>Your Care</small></button>
+   <button class="flower" onclick="reveal(3)">🌺<br><small>Your Thoughtfulness</small></button>
+   <button class="flower" onclick="reveal(4)">🌻<br><small>Your Patience</small></button>
+   <button class="flower" onclick="reveal(5)">💐<br><small>Your Love</small></button>
+   <button class="flower" onclick="reveal(6)" style="grid-column:1/-1">🌹<br><small>My Favorite Person</small></button>
+  </div>
+  <div id="flowerMessage" class="message"></div>
+  <div id="flowerEnding" class="message">
+   Every petal has a reason, but even these seven reasons aren't enough to explain how much I treasure you. Thank you for being you, my babi. Happy First Monthsary! ♡
+  </div>
+  <button onclick="showPage('home')" class="secondary">← Back</button>
+ </div>
+</section>
+
+<section id="song" class="page">
+ <div class="card">
+  <div class="heart">🎵 ♡</div>
+  <h1>A Song for You</h1>
+  <p>Because some feelings are easier to express through music. I hope this song reminds you of us. ♡</p>
+  <iframe src="https://open.spotify.com/embed/track/6a3qOj7lEfVuSFiKUM9pRG?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <p class="small">Tap play to listen. Spotify may ask you to open its app.</p>
+  <button onclick="showPage('home')" class="secondary">← Back</button>
+ </div>
+</section>
+
+<script>
+function unlock(){
+ if(document.getElementById('password').value==='0401'){
+  showPage('home');
+ }else{
+  document.getElementById('error').textContent='Wrong password. Try again, babi. ♡';
+ }
+}
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo(0,0);
+}
+const messages=[
+ ["Your Efforts","I treasure every little effort na ginagawa mo just to make me happy. Kahit simple things lang, they mean so much to me. I hope you know na I notice and appreciate everything you do."],
+ ["The Way You Treat Me","Thank you for always treating me with so much love, patience, and respect. You make me feel appreciated and special, even through the smallest things."],
+ ["Your Care","I love how you always remind me to take care of my health, sometimes mas inuuna mo pa health ko kaysa sa sarili mo. Please don't forget na you deserve to be taken care of, too, babi."],
+ ["Your Thoughtfulness","I love how thoughtful you are. You remember the little things about me, and you always make me feel na someone genuinely cares about how I feel."],
+ ["Your Patience","Thank you for being patient with me, especially kapag makulit or stubborn ako. I know I'm not always easy to understand, but you still try your best to understand me. I appreciate that so much."],
+ ["Your Love","I treasure how you show your love through your actions, not just through words. Every effort, every reminder, and every little thing you do makes me feel how much you care."],
+ ["My Favorite Person","I hope you never forget how much I appreciate having you in my life. I'm so proud of you, and I'm always thankful na ikaw yung person na I get to share my love with. I love you, babi! ♡"]
+];
+let opened=[];
+function reveal(i){
+ document.getElementById('flowerMessage').classList.add('show');
+ document.getElementById('flowerMessage').innerHTML='<h2>'+messages[i][0]+'</h2><p>'+messages[i][1]+'</p>';
+ if(!opened.includes(i))opened.push(i);
+ if(opened.length===7)document.getElementById('flowerEnding').classList.add('show');
+}
+</script>
+</body>
+</html>
